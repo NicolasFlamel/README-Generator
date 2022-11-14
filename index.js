@@ -45,7 +45,6 @@ const questions = [
         choices: [
             'GNU AGPLv3',
             'GNU GPLv3',
-            'GNU LGPLv3',
             'Mozilla Public License 2.0',
             'Apache License 2.0',
             'MIT License',
@@ -101,7 +100,10 @@ async function generateLicense(licenseName) {
         console.log('File Read');
     });
 
-    writeToFile('LICENSE', license);
+    if (licenseName == 'The Unlicense')
+        writeToFile('UNLICENSE', license)
+    else
+        writeToFile('LICENSE', license);
 }
 
 // function to write README file

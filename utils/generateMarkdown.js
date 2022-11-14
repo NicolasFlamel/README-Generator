@@ -9,9 +9,6 @@ function renderLicenseBadge(license) {
     case 'GNU GPLv3':
       badgeLink = 'https://img.shields.io/badge/license-GNU_GPLv3-green/'
       break;
-    case 'GNU LGPLv3':
-      badgeLink = 'https://img.shields.io/badge/license-GNU_LGPLv3-greenl'
-      break;
     case 'Mozilla Public License 2.0':
       badgeLink = 'https://img.shields.io/badge/license-MPL_2.0-green'
       break;
@@ -44,9 +41,6 @@ function renderLicenseLink(license) {
       break;
     case 'GNU GPLv3':
       link = 'https://choosealicense.com/licenses/gpl-3.0/'
-      break;
-    case 'GNU LGPLv3':
-      link = 'https://choosealicense.com/licenses/lgpl-3.0/'
       break;
     case 'Mozilla Public License 2.0':
       link = 'https://choosealicense.com/licenses/mpl-2.0/'
