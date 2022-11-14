@@ -1,9 +1,8 @@
-// TODO: Include packages needed for this application
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -72,15 +71,7 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(`./results/${fileName}.md`, data, function (err){
-        if (err) throw err;
-        console.log('File Created in "results" folder');
-    });
-}
-
-// TODO: Create a function to initialize app
+// initialize app
 function init() {
     askQuestions();
 }
@@ -89,8 +80,10 @@ const askQuestions = () => {
     inquirer
         .prompt(questions)
         .then((answers) => {
-            const markdown = generateMarkdown(answers)
-            writeToFile('README', markdown);
+            const markdown = generateMarkdown(answers);
+            generateLicense(answers.license);
+            writeToFile('README.md', markdown);
+
         })
         .catch((error) => {
             if (error.isTtyError) {
@@ -102,5 +95,21 @@ const askQuestions = () => {
         });
 }
 
-// Function call to initialize app
+async function generateLicense(licenseName) {
+    const license = await fs.promises.readFile(`./utils/licenses/${licenseName}.txt`, function (err) {
+        if (err) throw err;
+        console.log('File Read');
+    });
+
+    writeToFile('LICENSE', license);
+}
+
+// function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(`./results/${fileName}`, data, function (err) {
+        if (err) throw err;
+        console.log('File Created in "results" folder');
+    });
+}
+
 init();

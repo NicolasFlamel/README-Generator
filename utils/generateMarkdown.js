@@ -76,7 +76,7 @@ function renderLicenseSection(license) {
     return 'N/A'
   }
 
-  const link = renderLicenseLink()
+  const link = renderLicenseLink(license)
   return `This project is available under the ${license} license. Please see the [LICENSE file](./LICENSE). For more information please visit [${license} information page](${link})`
 }
 
@@ -85,8 +85,8 @@ function generateMarkdown(data) {
   const licenseSection = renderLicenseSection(data.license);
   const badgeLink = renderLicenseBadge(data.license);
 
-  return `![badge](${badgeLink})
-  # ${data.title}
+  return `# ${data.title}
+  ![badge](${badgeLink})
 
   ## Description
 
