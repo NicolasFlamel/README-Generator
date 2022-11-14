@@ -102,6 +102,8 @@ async function generateLicense(licenseName) {
 
     if (licenseName == 'The Unlicense')
         writeToFile('UNLICENSE', license)
+    else if (licenseName == 'No License')
+        return
     else
         writeToFile('LICENSE', license);
 }
