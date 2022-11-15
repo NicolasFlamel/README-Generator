@@ -12,7 +12,7 @@ This project was created to be able to make professional README files using Node
 
 ## Usage
 
-Navigate to folder where index.js is located then run the file using node, "node index.js". You will be given different prompts to create a README for your project. Type in your responses until all prompts are answered. License section will be a selectable list which can be navigated using your arrow keys then selected with 'Enter" key. Once completed two lines of "File created in "results" folder" should be displayed in your terminal signifying the files where created successfully. Navigate to your 'results' folder and your README.md and LICENSE files should be located inside populated with the information you provided.
+Navigate to folder where index.js is located then run the file using node, "node index.js". You will be given different prompts to create a README for your project. Type in your responses until all prompts are answered. License section will be a selectable list which can be navigated using your arrow keys then selected with 'Enter" key. Once completed two lines of "File created in "results" folder" should be displayed in your terminal signifying the files where created successfully. Navigate to your 'results' folder and your README.md and LICENSE files should be located inside populated with the information you provided. Please see [Video demestration](https://drive.google.com/file/d/12lrg-eWLFJg9FQmMeFf1DPwfMkvUZeud/view) for a preview.
 
 ![Project Preview](assets/images/project_preview.png)
 
